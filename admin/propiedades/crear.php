@@ -12,13 +12,13 @@
   //Arreglo con mensajes de errores
   $errores = [];
 
-  $titulo = $_POST[''];
-  $precio = $_POST[''];
-  $descripcion = $_POST[''];
-  $habitaciones = $_POST[''];
-  $wc = $_POST[''];
-  $estacionamiento = $_POST['estacionamiento'];
-  $vendedorId = $_POST['vendedor'];
+  $titulo = '';
+  $precio = '';
+  $descripcion = '';
+  $habitaciones = '';
+  $wc = '';
+  $estacionamiento = '';
+  $vendedorId = '';
 
   //Ejecutar el código después de que el usuario envía el formulario
   if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -94,7 +94,7 @@
         <h1>Crear</h1>
         <a href="/admin" class="boton boton-verde">Volver</a>
 
-        <?php foreach($errores as error); ?>
+        <?php foreach($errores as $error) : ?>
         <div class="alerta error">
             <?php echo $error ?>
         </div>
@@ -143,7 +143,8 @@
                 <select name="vendedor">
                     <option value="">== Seleccione ==</option>
                     <?php while($vendedor = mysqli_fetch_assoc($resultado) ): ?>
-                        <option <?php echo $vendedorId == $vendedor['id'] ? 'selected' : ''; ?> value="<?php echo $vendedor['id']; ?>"> <?php echo $vendedor['nombre'] . " " . $vendedor['apellido']; ?> </option>
+                        <option <?php echo $vendedorId === $vendedor['id'] ? 'selected' : ''; ?> value="<?php echo $vendedor['id']; ?>"> 
+                        <?php echo $vendedor['nombre'] . " " . $vendedor['apellido']; ?> </option>
                     <?php endwhile ?>
                 </select>
 
