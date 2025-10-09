@@ -6,7 +6,7 @@ build/
 
 # Archivos de configuración sensibles
 /includes/config/config.php
-.usuario.php
+/usuario.php
 
 # Sistemas / OS
 .DS_Store
