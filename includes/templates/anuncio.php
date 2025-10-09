@@ -5,10 +5,10 @@
 
     <main class="contenedor seccion">
       
-      <h2>Casas y Departamentos en Venta</h2>
+      <h2><?php echo $propiedad['titulo'];?></h2>
 
       <?php 
-        $limite = 10;
+        $limite = 1;
         include 'includes/templates/anuncios.php';
       ?>
     </main>

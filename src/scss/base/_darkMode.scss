@@ -37,4 +37,8 @@
             color: $blanco;
         }
     }
+
+    .text-dark-mode {
+        filter: invert(100%);
+    }
 }
