@@ -9,6 +9,7 @@
   
   
   //Conexión a la base de datos
+  require '../../includes/config/database.php';
   $db = conectarBD();
 
   //Consultar para obtener los vendedores
